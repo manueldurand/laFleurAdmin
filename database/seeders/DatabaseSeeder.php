@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 use \App\Models\Produit;
+use \App\Models\Couleur;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        Couleur::factory(5)->create();
 
         Produit::factory(10)->create();
     }

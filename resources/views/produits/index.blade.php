@@ -3,9 +3,11 @@
 @section('contenu')
 
         <h1>Index des produits</h1>
+       
     <table class="ml-4 bg-white">
         <tr class="border" >
             <td class="p-3">NOM</td>
+            <td class="p-3">COULEUR</td>
             <td>DESCRIPTION</td>
             <td class="p-3">TYPE</td>
             <td>STOCK</td>
@@ -15,6 +17,7 @@
         <td>
             <a href="{{route('produits.show',$produit->id)}}"> {{$produit -> nom_produit}}</a>
         </td>
+        <td>{{$produit -> nom_couleur}}</td>
         <td class="text-gray-500">
             <a href="{{route('produits.show',$produit->id)}}"> {{$produit -> description}}</a>
         </td>

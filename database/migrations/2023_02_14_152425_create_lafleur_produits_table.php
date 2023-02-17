@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('lafleur_produits', function (Blueprint $table) {
             $table->id();
             $table->string('nom_produit');
+            $table->unsignedBigInteger('couleur_id')->default(1);
+            $table->foreign('couleur_id')->references('id_couleur')->on('lafleur_couleurs');
             $table->text('description');
             $table->enum('type',['unité', 'bouquet', 'gerbe'] );
             $table->bigInteger('stock')->default(0);
             $table->string('image')->default('default.png');
-            // $table->timestamps();
+            $table->timestamp('mise à jour')->nullable();
         });
     }
 

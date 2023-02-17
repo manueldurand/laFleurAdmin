@@ -18,6 +18,7 @@ class ProduitFactory extends Factory
     {
         return [
             'nom_produit' => $this->faker->words(2, true),
+            'couleur_id' => 1,
             'description' => $this->faker->words(15, true),
             'type' => 'unité',
             'stock' => 100,

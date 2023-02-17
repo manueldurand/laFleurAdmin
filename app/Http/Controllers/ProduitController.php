@@ -6,6 +6,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Produit;
+use App\Models\Couleur;
+
 
 class ProduitController extends Controller
 {
@@ -52,9 +54,11 @@ class ProduitController extends Controller
     public function show(string $id)
     {
         $produit = Produit::find($id);
+        $couleur = $produit->nom_couleur;
         return view('produits.show', [
             'id' => $id,
-            'produit' => $produit
+            'produit' => $produit,
+            'nom_couleur' => $couleur
         ]);
     }
 
@@ -64,7 +68,9 @@ class ProduitController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        Produit::find($id);
+        $couleurs = Couleur::all();
+        return view('produits.edit', ['id'=>$id, 'couleurs'=>$couleurs]);
     }
 
     /**
@@ -72,7 +78,7 @@ class ProduitController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
     /**
