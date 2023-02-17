@@ -18,6 +18,7 @@
             <a href="{{route('produits.show',$produit->id)}}"> {{$produit -> nom_produit}}</a>
         </td>
         <td>{{$produit -> nom_couleur}}</td>
+
         <td class="text-gray-500">
             <a href="{{route('produits.show',$produit->id)}}"> {{$produit -> description}}</a>
         </td>

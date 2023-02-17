@@ -20,7 +20,8 @@ class ProduitController extends Controller
 
     
         $produits = Produit::all();
-        return view('produits.index', ['produits' => $produits]);
+        $couleurs = Couleur::all();
+        return view('produits.index', ['produits' => $produits, 'couleur' => $couleurs]);
     }
 
     /**
@@ -54,11 +55,11 @@ class ProduitController extends Controller
     public function show(string $id)
     {
         $produit = Produit::find($id);
-        $couleur = $produit->nom_couleur;
+        $couleur = $produit->couleur;
         return view('produits.show', [
             'id' => $id,
             'produit' => $produit,
-            'nom_couleur' => $couleur
+            'couleur' => $couleur
         ]);
     }
 

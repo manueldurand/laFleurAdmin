@@ -4,7 +4,7 @@
 
     <h1>Détail-produit</h1>
     <h2>Nom : {{$produit->nom_produit}}</h2>
-    <p>Couleur : {{$produit->nom_couleur}}</p>
+    <p>Couleur : {{$produit->couleur_id}}</p>
     <p>Description : {{$produit->description}}</p>
     <p>Mode de vente : {{$produit->type}}</p>
     <p>Quantité en stock : {{$produit->stock}}</p>
