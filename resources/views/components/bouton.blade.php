@@ -1,3 +1,3 @@
-<div>
-    <!-- Well begun is half done. - Aristotle -->
-</div>
+<button class="{{$bgColor}} rounded p-3 hover:bg-yellow-300" >
+    {{$action}}
+</button>
