@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nom_produit');
             $table->text('description');
             $table->enum('type',['unité', 'bouquet', 'gerbe'] );
-            $table->bigInteger('stock');
-            $table->string('image');
+            $table->bigInteger('stock')->default(0);
+            $table->string('image')->default('default.png');
             // $table->timestamps();
         });
     }

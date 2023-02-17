@@ -26,7 +26,7 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        //
+        return view('produits.create');
     }
 
     /**
@@ -34,7 +34,16 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->validate([
+            'nom_produit' => 'required | string | max:45 | min:3',
+            'description' => 'max:255'
+        ])){
+            
+            Produit::create($request->all());
+        } else {
+            return redirect()->back();
+        }
+        return redirect()->route('produits.index');
     }
 
     /**
